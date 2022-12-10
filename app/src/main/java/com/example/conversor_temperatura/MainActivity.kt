@@ -16,44 +16,19 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        usarBinding()
+
         binding.botaoConverter.setOnClickListener {
             converter()
         }
     }
-/*
-    fun converter(){
-        val temperatura = binding.textTemperatura.text.toString().toDouble()
-
-        if(binding.radioCelciusPrimeiro.isChecked && binding.radioFahrenheitSegundo.isChecked){
-            val resultado = (temperatura * 1.8) + 32
-            binding.textResultado.setText("%.2f".format(resultado))
-        }else if(binding.radioCelciusPrimeiro.isChecked && binding.radioKelvinSegundo.isChecked) {
-            val resultado = temperatura + 273
-            binding.textResultado.setText("%.2f".format(resultado))
-        }else if(binding.radioCelciusPrimeiro.isChecked && binding.radioCelciusSegundo.isChecked){
-            val resultado = temperatura
-            binding.textResultado.setText("%.2f".format(resultado))
-        }else if(binding.radioFahrenheitPrimeiro.isChecked && binding.radioCelciusSegundo.isChecked){
-            val resultado = (temperatura -32) / 1.8
-            binding.textResultado.setText("%.2f".format(resultado))
-        }else if(binding.radioFahrenheitPrimeiro.isChecked && binding.radioKelvinSegundo.isChecked) {
-            val resultado = (temperatura + 459.67) * 5 / 9
-            binding.textResultado.setText("%.2f".format(resultado))
-        }else if(binding.radioFahrenheitPrimeiro.isChecked && binding.radioFahrenheitSegundo.isChecked){
-            val resultado = temperatura
-            binding.textResultado.setText("%.2f".format(resultado))
-        }else if(binding.radioKelvinPrimeiro.isChecked && binding.radioCelciusSegundo.isChecked){
-            val resultado = temperatura - 273
-            binding.textResultado.setText("%.2f".format(resultado))
-        }else if(binding.radioKelvinPrimeiro.isChecked && binding.radioFahrenheitSegundo.isChecked){
-            val resultado = ((temperatura -273) *9/5) + 32
-            binding.textResultado.setText("%.2f".format(resultado))
-        }else if(binding.radioKelvinPrimeiro.isChecked && binding.radioKelvinSegundo.isChecked){
-            val resultado = temperatura
-            binding.textResultado.setText("%.2f".format(resultado))
+ 
+        fun usarBinding(){
+            binding = ActivityMainBinding.inflate(layoutInflater)
+            val view = binding.root
+            setContentView(view)
         }
-    }
-    */
+
         fun converter(){
         val temperatura = binding.textTemperatura.text.toString().toDouble()
         val cF = (temperatura * 1.8) + 32
