@@ -28,35 +28,35 @@ class MainActivity : AppCompatActivity() {
 
     fun converter() {
         val temperatura = binding.textTemperatura.text.toString().toDouble()
-        val cF = (temperatura * 1.8) + 32
-        val cK = temperatura + 273
-        val cC = temperatura
-        val fC = (temperatura - 32) / 1.8
-        val fK = (temperatura + 459.67) * 5 / 9
-        val fF = temperatura
-        val kC = temperatura - 273
-        val kF = ((temperatura - 273) * 9 / 5) + 32
-        val kK = temperatura
+        val celsiusToFahrenheit = (temperatura * 1.8) + 32
+        val celsiusToKelvin = temperatura + 273
+        val celsiusToCelsius = temperatura
+        val fahrenheitToCelsius = (temperatura - 32) / 1.8
+        val fahrenheitToKelvin = (temperatura + 459.67) * 5 / 9
+        val fahrenheitToFahrenheit = temperatura
+        val kelvinToCelsius = temperatura - 273
+        val kelvinToFahrenheit = ((temperatura - 273) * 9 / 5) + 32
+        val kelvinToKelvin = temperatura
 
         when {
             binding.radioCelciusPrimeiro.isChecked && binding.radioFahrenheitSegundo.isChecked ->
-                binding.textResultado.setText("%.2f".format(cF))
+                binding.textResultado.setText("%.2f".format(celsiusToFahrenheit))
             binding.radioCelciusPrimeiro.isChecked && binding.radioKelvinSegundo.isChecked ->
-                binding.textResultado.setText("%.2f".format(cK))
+                binding.textResultado.setText("%.2f".format(celsiusToKelvin))
             binding.radioCelciusPrimeiro.isChecked && binding.radioCelciusSegundo.isChecked ->
-                binding.textResultado.setText("%.2f".format(cC))
+                binding.textResultado.setText("%.2f".format(celsiusToCelsius))
             binding.radioFahrenheitPrimeiro.isChecked && binding.radioCelciusSegundo.isChecked ->
-                binding.textResultado.setText("%.2f".format(fC))
+                binding.textResultado.setText("%.2f".format(fahrenheitToCelsius))
             binding.radioFahrenheitPrimeiro.isChecked && binding.radioKelvinSegundo.isChecked ->
-                binding.textResultado.setText("%.2f".format(fK))
+                binding.textResultado.setText("%.2f".format(fahrenheitToKelvin))
             binding.radioFahrenheitPrimeiro.isChecked && binding.radioFahrenheitSegundo.isChecked ->
-                binding.textResultado.setText("%.2f".format(fF))
+                binding.textResultado.setText("%.2f".format(fahrenheitToFahrenheit))
             binding.radioKelvinPrimeiro.isChecked && binding.radioCelciusSegundo.isChecked ->
-                binding.textResultado.setText("%.2f".format(kC))
+                binding.textResultado.setText("%.2f".format(kelvinToCelsius))
             binding.radioKelvinPrimeiro.isChecked && binding.radioFahrenheitSegundo.isChecked ->
-                binding.textResultado.setText("%.2f".format(kF))
+                binding.textResultado.setText("%.2f".format(kelvinToFahrenheit))
             binding.radioKelvinPrimeiro.isChecked && binding.radioKelvinSegundo.isChecked ->
-                binding.textResultado.setText("%.2f".format(kK))
+                binding.textResultado.setText("%.2f".format(kelvinToKelvin))
         }
     }
 }
